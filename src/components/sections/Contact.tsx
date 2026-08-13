@@ -11,6 +11,8 @@ gsap.registerPlugin(ScrollTrigger);
 export function Contact() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -40,19 +42,39 @@ export function Contact() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({
-        name: "",
-        phone: "",
-        branch: "Anchampeedika Main Branch",
-        service: "Savings Deposit / General Inquiry",
-        message: "",
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-    }, 5000);
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "Failed to send your inquiry.");
+      }
+
+      setFormSubmitted(true);
+      setTimeout(() => {
+        setFormSubmitted(false);
+        setFormData({
+          name: "",
+          phone: "",
+          branch: "Anchampeedika Main Branch",
+          service: "Savings Deposit / General Inquiry",
+          message: "",
+        });
+      }, 5000);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Failed to send your inquiry.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -231,10 +253,23 @@ export function Contact() {
                   </div>
                 </div>
 
+                {submitError && (
+                  <div className="flex items-start gap-2.5 p-4 rounded-2xl bg-red-50 border border-red-200 text-sm text-red-700">
+                    <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                    <span>{submitError}</span>
+                  </div>
+                )}
+
                 <div className="pt-2">
-                  <MagneticButton type="submit" variant="accent" size="lg" className="w-full justify-center">
+                  <MagneticButton
+                    type="submit"
+                    variant="accent"
+                    size="lg"
+                    className="w-full justify-center"
+                    disabled={isSubmitting}
+                  >
                     <Send className="w-5 h-5 text-white" />
-                    <span>Submit Inquiry</span>
+                    <span>{isSubmitting ? "Sending..." : "Submit Inquiry"}</span>
                   </MagneticButton>
                 </div>
               </form>

@@ -15,6 +15,7 @@ export interface MagneticButtonProps {
   distance?: number;
   strength?: number;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 export function MagneticButton({
@@ -27,6 +28,7 @@ export function MagneticButton({
   distance = 0.45,
   strength = 25,
   type = "button",
+  disabled = false,
 }: MagneticButtonProps) {
   const {
     ref,
@@ -66,6 +68,7 @@ export function MagneticButton({
         "relative inline-flex items-center justify-center cursor-pointer transition-colors duration-200 overflow-hidden select-none group",
         variantStyles[variant],
         sizeStyles[size],
+        disabled && "pointer-events-none opacity-60",
         className
       )}
     >
@@ -97,7 +100,12 @@ export function MagneticButton({
   }
 
   return (
-    <button type={type} onClick={onClick} className="inline-block bg-transparent p-0 border-0 outline-none">
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className="inline-block bg-transparent p-0 border-0 outline-none disabled:cursor-not-allowed"
+    >
       {Content}
     </button>
   );
