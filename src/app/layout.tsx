@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://morazhakalliasseribank.vercel.app"),
   title: "Morazha Kalliasseri Service Co-operative Bank | MKSC Bank (Est. 1961)",
   description: "Official portal of Morazha Kalliasseri Service Co-op Bank Ltd No. 4220. Empowering Kannur community with Class 1 Super Grade banking, deposits, loans, RTGS/NEFT, and non-banking services across 9 branches.",
   keywords: ["MKSC Bank", "Morazha Bank", "Kalliasseri Co-op Bank", "Cooperative Bank Kannur", "Morazha Kalliasseri Service Co-op Bank", "Class 1 Super Grade Bank"],

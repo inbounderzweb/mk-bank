@@ -92,10 +92,11 @@ export function ConventionCentre() {
            
 
             <h2 className="cc-reveal text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
-               Celebrate Life's Finest Moments at Our {" "}
+              Premium Venue for Every {" "}
               <span className="text-[#8F8173] bg-clip-text">
-                Premium Convention Centre
+                Celebration
               </span>
+              
             </h2>
 
             <p className="cc-reveal text-slate-600 text-base md:text-lg leading-relaxed max-w-xl">
