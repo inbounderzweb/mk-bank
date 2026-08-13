@@ -10,7 +10,7 @@ import { Camera, Maximize2, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-type Category = "all" | "branches" | "community" | "agri" | "events";
+type Category = "all" | "branches" | "community" | "events";
 
 interface GalleryItem {
   id: number;
@@ -25,75 +25,66 @@ interface GalleryItem {
 const galleryData: GalleryItem[] = [
   {
     id: 1,
-    title: "Anchampeedika Main Branch Exterior",
-    category: "branches",
-    categoryName: "Branch Network",
-    image: "/banner_3.png",
-    caption: "Modern multi-storey headquarters in Anchampeedika equipped with automated locker vaults and core banking counters.",
-    date: "2024",
+    title: "SSLC & +2 Achievers Felicitation",
+    category: "events",
+    categoryName: "Events & Celebrations",
+    image: "/gallery/gallery1.jpg",
+    caption: "Board members honouring the year's top-scoring SSLC and +2 students at the annual achievers' felicitation held at the bank premises.",
+    date: "2018",
   },
   {
     id: 2,
-    title: "Modern Banking Customer Desk",
-    category: "branches",
-    categoryName: "Branch Network",
-    image: "/banner_1.png",
-    caption: "State-of-the-art customer service counter providing seamless RTGS, NEFT, and deposit services to members.",
-    date: "2024",
+    title: "Student Achievers Award Ceremony",
+    category: "events",
+    categoryName: "Events & Celebrations",
+    image: "/gallery/gallery2.jpg",
+    caption: "Bank officials addressing members and award recipients during the annual student achievers recognition programme.",
+    date: "2018",
   },
   {
     id: 3,
-    title: "Kudumbasree NHG Self-Help Meeting",
-    category: "community",
-    categoryName: "Community Welfare",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80",
-    caption: "Women micro-entrepreneurship group gathering discussing low-interest self-help group loans provided by MKSC Bank.",
-    date: "2024",
+    title: "24-Hour ATM Service Launch",
+    category: "branches",
+    categoryName: "Branch Network",
+    image: "/gallery/gallery6.jpg",
+    caption: "Announcing the bank's new round-the-clock ATM service for easier, faster cash withdrawals for members.",
+    date: "2018",
   },
   {
     id: 4,
-    title: "Agrarian Farmer Modernization Camp",
-    category: "agri",
-    categoryName: "Agri & Farming",
-    image: "/banner_2.png",
-    caption: "Organic fertilizer distribution and mechanized crop equipment credit workshop organized for Morazha farmers.",
-    date: "2024",
+    title: "Haritham Sahakaranam - World Environment Day",
+    category: "community",
+    categoryName: "Community Welfare",
+    image: "/gallery/gallery7.jpg",
+    caption: "The bank's 'Green Co-operation' theme-trees campaign marking World Environment Day across Kerala's co-operative network.",
+    date: "2018",
   },
   {
     id: 5,
-    title: "Neethi Subsidized Pharmacy Opening",
+    title: "Sapling Plantation Drive",
     category: "community",
     categoryName: "Community Welfare",
-    image: "https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&w=1200&q=80",
-    caption: "Discounted essential medicines distribution counter serving members and elderly villagers in Kalliasseri.",
-    date: "2023",
+    image: "/gallery/gallery3.jpeg",
+    caption: "Board members and local dignitaries planting saplings as part of the bank's Green Co-operation environment initiative.",
+    date: "2018",
   },
   {
     id: 6,
-    title: "60th Anniversary Foundation Ceremony",
-    category: "events",
-    categoryName: "Events & Celebrations",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
-    caption: "General Body members and board directors celebrating Class 1 Super Grade status and 60+ years of community trust.",
-    date: "2021",
+    title: "Green Co-operation Tree Planting",
+    category: "community",
+    categoryName: "Community Welfare",
+    image: "/gallery/gallery4.jpeg",
+    caption: "Members and officials planting native trees near the branch premises as part of the World Environment Day drive.",
+    date: "2018",
   },
   {
     id: 7,
-    title: "Mangad Commercial Shopping Complex",
-    category: "branches",
-    categoryName: "Branch Network",
-    image: "/banner_3.png",
-    caption: "Multi-purpose commercial complex built by the bank to foster local retail and small business enterprises.",
-    date: "2023",
-  },
-  {
-    id: 8,
-    title: "Organic Fertilizer & Seed Distribution",
-    category: "agri",
-    categoryName: "Agri & Farming",
-    image: "/banner_2.png",
-    caption: "Seasonal paddy seed distribution camp aiding local agrarian families ahead of monsoon cultivation.",
-    date: "2024",
+    title: "Staff & Members Planting Saplings",
+    category: "community",
+    categoryName: "Community Welfare",
+    image: "/gallery/gallery5.jpeg",
+    caption: "Bank staff and members participating in the sapling plantation drive to support local afforestation efforts.",
+    date: "2018",
   },
 ];
 
@@ -156,7 +147,7 @@ export function Gallery() {
             Photo Gallery & Community Moments
           </h2>
           <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-            Explore photos of our modern branch network, agricultural workshops, Kudumbasree self-help groups, and non-banking welfare initiatives across Kannur.
+            Explore photos of our branch services, annual achiever felicitations, and community green initiatives across Kannur.
           </p>
         </div>
 
@@ -166,7 +157,6 @@ export function Gallery() {
             { id: "all", label: "All Photos" },
             { id: "branches", label: "Branch Infrastructure" },
             { id: "community", label: "Community & Welfare" },
-            { id: "agri", label: "Agri & Farming" },
             { id: "events", label: "Events & Meetings" },
           ].map((cat) => {
             const isActive = activeCategory === cat.id;

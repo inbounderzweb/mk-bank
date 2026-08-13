@@ -11,7 +11,6 @@ import {
   PartyPopper,
   Briefcase,
   Users,
-  Gem,
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -19,11 +18,11 @@ gsap.registerPlugin(ScrollTrigger);
 // TODO: swap in the live Convention Centre URL once available
 const CONVENTION_CENTRE_URL = "https://astoriaconventioncentre.vercel.app/";
 
+const featuredImage = { icon: PartyPopper, label: "Grand Auditorium", image: "/cn.jpg" };
+
 const galleryImages = [
-  { icon: PartyPopper, label: "Grand Auditorium", image: "/cn.jpg" },
   { icon: Briefcase, label: "Amphitheatre", image: "/cn2.jpg" },
   { icon: Users, label: "Grand Reception Lobby", image: "/cn4.jpg" },
-  { icon: Gem, label: "Children's Park", image: "/cn3.jpg" },
 ];
 
 export function ConventionCentre() {
@@ -129,36 +128,66 @@ export function ConventionCentre() {
             </div>
           </div>
 
-          {/* Right: 2x2 Premium Image Grid */}
+          {/* Right: Featured image + two smaller images below */}
           <div className="relative">
-            <div className="cc-grid grid grid-cols-2 gap-4 sm:gap-5 md:gap-6">
-              {galleryImages.map((item) => {
-                const Icon = item.icon;
+            <div className="cc-grid flex flex-col gap-4 sm:gap-5 md:gap-6">
+              {/* Large featured image */}
+              {(() => {
+                const Icon = featuredImage.icon;
                 return (
-                  <div
-                    key={item.label}
-                    className="cc-grid-item group relative aspect-square rounded-2xl sm:rounded-3xl overflow-hidden shadow-soft border border-slate-200/70 transition-shadow duration-500 hover:shadow-soft-lg"
-                  >
+                  <div className="cc-grid-item group relative aspect-6/3 sm:aspect-30/14 w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-soft border border-slate-200/70 transition-shadow duration-500 hover:shadow-soft-lg">
                     <Image
-                      src={item.image}
-                      alt={item.label}
+                      src={featuredImage.image}
+                      alt={featuredImage.label}
                       fill
-                      sizes="(max-width: 640px) 45vw, (max-width: 1024px) 40vw, 22vw"
+                      sizes="(max-width: 1024px) 90vw, 45vw"
+                      priority
                       className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
 
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2 translate-y-1 transition-transform duration-500 group-hover:translate-y-0 sm:bottom-4 sm:left-4 sm:right-4">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/25 bg-white/15 text-white backdrop-blur-md sm:h-9 sm:w-9 sm:rounded-xl">
-                        <Icon className="h-4 w-4" />
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2.5 translate-y-1 transition-transform duration-500 group-hover:translate-y-0 sm:bottom-5 sm:left-5 sm:right-5">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/25 bg-white/15 text-white backdrop-blur-md sm:h-10 sm:w-10">
+                        <Icon className="h-4.5 w-4.5" />
                       </div>
-                      <span className="text-xs font-bold text-white drop-shadow-md sm:text-sm">
-                        {item.label}
+                      <span className="text-sm font-bold text-white drop-shadow-md sm:text-base">
+                        {featuredImage.label}
                       </span>
                     </div>
                   </div>
                 );
-              })}
+              })()}
+
+              {/* Two smaller images side by side */}
+              <div className="grid grid-cols-2 gap-4 sm:gap-5 md:gap-6">
+                {galleryImages.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div
+                      key={item.label}
+                      className="cc-grid-item group relative aspect-16/13  sm:aspect-11/7 rounded-2xl sm:rounded-3xl overflow-hidden shadow-soft border border-slate-200/70 transition-shadow duration-500 hover:shadow-soft-lg"
+                    >
+                      <Image
+                        src={item.image}
+                        alt={item.label}
+                        fill
+                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 40vw, 22vw"
+                        className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
+
+                      <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2 translate-y-1 transition-transform duration-500 group-hover:translate-y-0 sm:bottom-4 sm:left-4 sm:right-4">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/25 bg-white/15 text-white backdrop-blur-md sm:h-9 sm:w-9 sm:rounded-xl">
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <span className="text-xs font-bold text-white drop-shadow-md sm:text-sm">
+                          {item.label}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
