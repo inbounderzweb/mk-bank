@@ -34,6 +34,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 type ServiceCategory = "deposits" | "loans" | "banking" | "non-banking";
 
+interface DownloadForm {
+  title: string;
+  file: string;
+  fileName: string;
+  fileSize: string;
+}
+
+const downloadForms: Record<string, DownloadForm> = {
+  sb: {
+    title: "SB Application Form",
+    file: "/pdf/SB-Application-Form.pdf",
+    fileName: "SB-Application-Form.pdf",
+    fileSize: "128 KB",
+  },
+  rtgs: {
+    title: "RTGS / NEFT Voucher",
+    file: "/pdf/RTGS-NEFT-Form.pdf",
+    fileName: "RTGS-NEFT-Form.pdf",
+    fileSize: "6.6 MB",
+  },
+};
+
 export function Services() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [activeTab, setActiveTab] = useState<ServiceCategory>("deposits");
@@ -312,7 +334,7 @@ export function Services() {
             <MagneticButton
               variant="primary"
               size="md"
-              onClick={() => setSelectedFormModal("SB Application Form")}
+              onClick={() => setSelectedFormModal("sb")}
             >
               <Download className="w-4 h-4 text-emerald-400" />
               <span>SB Account Form</span>
@@ -321,7 +343,7 @@ export function Services() {
             <MagneticButton
               variant="outline"
               size="md"
-              onClick={() => setSelectedFormModal("RTGS / NEFT Voucher")}
+              onClick={() => setSelectedFormModal("rtgs")}
             >
               <Download className="w-4 h-4 text-slate-700" />
               <span>RTGS Form</span>
@@ -331,35 +353,52 @@ export function Services() {
 
       </div>
 
-      {/* Download Modal Mockup */}
-      <Modal
-        isOpen={!!selectedFormModal}
-        onClose={() => setSelectedFormModal(null)}
-        title={selectedFormModal || "Form Preview"}
-        category="PDF Document Download"
-      >
-        <div className="space-y-4">
-          <p className="text-sm text-slate-600">
-            You are initiating the download for <strong>{selectedFormModal}</strong>. Please ensure all required KYC documents (Aadhaar card, Ration card/Voter ID, 2 passport size photographs) are submitted alongside the completed form at your nearest branch.
-          </p>
-          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs font-mono">
-            <div className="flex items-center gap-2">
-              <FileText className="w-5 h-5 text-emerald-600" />
-              <span>{selectedFormModal?.replace(/ /g, "_")}.pdf</span>
-            </div>
-            <span className="text-slate-500">1.2 MB • Official Format</span>
-          </div>
-          <div className="pt-2">
-            <a
-              href="#contact"
-              onClick={() => setSelectedFormModal(null)}
-              className="inline-flex items-center gap-2 text-xs font-bold text-emerald-700 hover:underline"
-            >
-              Need help filling out the form? Contact our support team →
-            </a>
-          </div>
-        </div>
-      </Modal>
+      {/* Download Form Modal */}
+      {(() => {
+        const activeForm = selectedFormModal ? downloadForms[selectedFormModal] : null;
+        return (
+          <Modal
+            isOpen={!!activeForm}
+            onClose={() => setSelectedFormModal(null)}
+            title={activeForm?.title || "Form Preview"}
+            category="PDF Document Download"
+          >
+            {activeForm && (
+              <div className="space-y-4">
+                <p className="text-sm text-slate-600">
+                  You are downloading the official <strong>{activeForm.title}</strong>. Please ensure all required KYC documents (Aadhaar card, Ration card/Voter ID, 2 passport size photographs) are submitted alongside the completed form at your nearest branch.
+                </p>
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs font-mono">
+                  <div className="flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-emerald-600" />
+                    <span>{activeForm.fileName}</span>
+                  </div>
+                  <span className="text-slate-500">{activeForm.fileSize} • Official Format</span>
+                </div>
+
+                <a
+                  href={activeForm.file}
+                  download={activeForm.fileName}
+                  className="flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-colors"
+                >
+                  <Download className="w-4 h-4 text-emerald-400" />
+                  <span>Download PDF</span>
+                </a>
+
+                <div className="pt-1">
+                  <a
+                    href="#contact"
+                    onClick={() => setSelectedFormModal(null)}
+                    className="inline-flex items-center gap-2 text-xs font-bold text-emerald-700 hover:underline"
+                  >
+                    Need help filling out the form? Contact our support team →
+                  </a>
+                </div>
+              </div>
+            )}
+          </Modal>
+        );
+      })()}
     </section>
   );
 }

@@ -10,7 +10,7 @@ import { Camera, Maximize2, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-type Category = "all" | "branches" | "community" | "events";
+type Category = "all" | "branches" | "community" | "events" | "convention";
 
 interface GalleryItem {
   id: number;
@@ -86,6 +86,42 @@ const galleryData: GalleryItem[] = [
     caption: "Bank staff and members participating in the sapling plantation drive to support local afforestation efforts.",
     date: "2018",
   },
+  {
+    id: 8,
+    title: "Convention Centre Inauguration",
+    category: "convention",
+    categoryName: "Convention Centre",
+    image: "/gallery/gallery8.jpeg",
+    caption: "Inauguration ceremony of the convention centre, marking the beginning of a new space for community events and gatherings.",
+    date: "2026",
+  },
+  {
+    id: 9,
+    title: "Convention Centre Inauguration",
+    category: "convention",
+    categoryName: "Convention Centre",
+    image: "/gallery/gallery9.jpeg",
+    caption: "Inauguration ceremony of the convention centre, marking the beginning of a new space for community events and gatherings.",
+    date: "2026",
+  },
+  {
+    id: 10,
+    title: "Convention Centre Inauguration",
+    category: "convention",
+    categoryName: "Convention Centre",
+    image: "/gallery/gallery10.jpeg",
+    caption: "Inauguration ceremony of the convention centre, marking the beginning of a new space for community events and gatherings.", 
+    date: "2026",
+  },
+  {
+    id: 11,
+    title: "Convention Centre Inauguration",
+    category: "convention",
+    categoryName: "Convention Centre",
+    image: "/gallery/gallery11.jpeg",
+    caption: "Inauguration ceremony of the convention centre, marking the beginning of a new space for community events and gatherings.", 
+    date: "2026",
+  },
 ];
 
 export function Gallery() {
@@ -158,6 +194,7 @@ export function Gallery() {
             { id: "branches", label: "Branch Infrastructure" },
             { id: "community", label: "Community & Welfare" },
             { id: "events", label: "Events & Meetings" },
+            { id: "convention", label: "Convention Centre" },
           ].map((cat) => {
             const isActive = activeCategory === cat.id;
             return (

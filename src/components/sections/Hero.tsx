@@ -114,7 +114,7 @@ export function Hero() {
           {/* Top Badge */}
           <div className="hero-badge inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs md:text-sm font-semibold text-white">
             {/* <span className="w-1.5 h-1.5 rounded-full bg-[#ED1C24] animate-pulse" /> */}
-            <span>Reg. No. 4220 &bull; Class 1 Super Grade Bank</span>
+            <span>Class 1 Super Grade Bank</span>
           </div>
 
           {/* Main Headline */}
@@ -139,7 +139,7 @@ export function Hero() {
 
             <MagneticButton href="#branches" variant="outline" size="lg">
               <Building2 className="w-5 h-5" />
-              <span>Locate 9 Branches</span>
+              <span>Locate Your Branch</span>
             </MagneticButton>
           </div>
 
@@ -155,13 +155,13 @@ export function Hero() {
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-[#2DBA4E]" />
-              <span>9 Branch Offices</span>
+              <span>12 Branch Offices</span>
             </div>
           </div>
         </div>
 
         {/* Hero Trust Stats Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-16 max-w-4xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-16 max-w-5xl">
           <div className="hero-stats min-w-0">
             <StatsCounter
               value={1961}
@@ -172,7 +172,7 @@ export function Hero() {
           </div>
           <div className="hero-stats min-w-0">
             <StatsCounter
-              value={9}
+              value={12}
               suffix=" Branches"
               label="Branch Network"
               sublabel="Morazha, Kalliasseri"

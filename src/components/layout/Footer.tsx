@@ -95,7 +95,7 @@ export function Footer() {
               </li>
               <li>
                 <a href="#branches" className="hover:text-[#2DBA4E] transition-colors">
-                  9 Branch Locations
+                  12 Branch Locations
                 </a>
               </li>
               <li>
@@ -131,7 +131,7 @@ export function Footer() {
               Anchampeedika P.O., Morazha, Kannur District, Kerala - 670301
             </p>
             <div className="text-sm text-[#2DBA4E] font-medium">
-              Phone: +91 497 2780220
+              Phone: <a href="tel:+914972780220" className="hover:underline">+91 497 2780220</a>
             </div>
 
             {/* Social Icon */}

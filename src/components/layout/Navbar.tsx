@@ -62,7 +62,7 @@ export function Navbar() {
                   scrolled ? "text-slate-900" : "text-white drop-shadow-md"
                 }`}
               >
-                MK Bank
+                Morazhakalliasseri Bank
               </span>
             </div>
           </div>

@@ -21,8 +21,8 @@ const CONVENTION_CENTRE_URL = "https://astoriaconventioncentre.vercel.app/";
 const featuredImage = { icon: PartyPopper, label: "Grand Auditorium", image: "/cn.jpg" };
 
 const galleryImages = [
-  { icon: Briefcase, label: "Amphitheatre", image: "/cn2.jpg" },
-  { icon: Users, label: "Grand Reception Lobby", image: "/cn4.jpg" },
+  { icon: Briefcase, label: "Main Hall", image: "/cn2.jpg" },
+  { icon: Users, label: "Reception Lobby", image: "/cn4.jpg" },
 ];
 
 export function ConventionCentre() {

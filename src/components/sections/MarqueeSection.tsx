@@ -8,18 +8,18 @@ import { ShieldCheck, Award, Building2, Landmark, Sprout, Heart, Send } from "lu
 const marqueeItemsRow1 = [
   { text: "ESTABLISHED 1961", icon: Award, color: "text-[text-slate-900]" },
   { text: "CLASS 1 SUPER GRADE BANK", icon: ShieldCheck, color: "text-[#2DBA4E]" },
-  { text: "9 BRANCH NETWORK ACROSS KANNUR", icon: Building2, color: "text-slate-900" },
+  { text: "12 BRANCH NETWORK ACROSS KANNUR", icon: Building2, color: "text-slate-900" },
   { text: "HIGH RETURN SAVINGS & FIXED DEPOSITS", icon: Landmark, color: "text-[text-slate-900]" },
   { text: "INSTANT RTGS / NEFT MONEY TRANSFER", icon: Send, color: "text-[#2DBA4E]" },
-  { text: "60+ YEARS OF COMMUNITY TRUST", icon: ShieldCheck, color: "text-slate-900" },
+  { text: "75+ YEARS OF COMMUNITY TRUST", icon: ShieldCheck, color: "text-slate-900" },
   { text: "KUDUMBASREE WOMEN GROUP CREDIT", icon: Heart, color: "text-[text-slate-900]" },
 ];
 
 const marqueeItemsRow2 = [
-  { text: "GOVT. AUDITED & RBI COMPLIANT", icon: ShieldCheck, color: "text-[#2DBA4E]" },
+  { text: "GOVT. AUDITED", icon: ShieldCheck, color: "text-[#2DBA4E]" },
   { text: "HOUSING, VEHICLE & PERSONAL LOANS", icon: Landmark, color: "text-[text-slate-900]" },
   { text: "MANGAD SHOPPING COMPLEX", icon: Building2, color: "text-slate-900" },
-  { text: "NEETHI SUBSIDIZED PHARMACY", icon: Heart, color: "text-[#2DBA4E]" },
+  { text: "FERTILIZER DEPOT", icon: Heart, color: "text-[#2DBA4E]" },
   { text: "24/7 EMERGENCY AMBULANCE SERVICE", icon: ShieldCheck, color: "text-[text-slate-900]" },
   { text: "ORGANIC FERTILIZER & SEED DEPOT", icon: Sprout, color: "text-[#2DBA4E]" },
   { text: "SAFE DEPOSIT VAULT LOCKERS", icon: Landmark, color: "text-slate-900" },

@@ -96,59 +96,57 @@ export function Contact() {
         </div>
 
         {/* Contact Layout Grid */}
-        <div className="contact-container grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-          
-          {/* Col 1: Contact Info & Interactive Map Mockup (Col 1-5) */}
-          <div className="lg:col-span-5 space-y-8">
-            
+        <div className="contact-container grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
+
+          {/* Col 1: Contact Info (Col 1-5) */}
+          <div className="lg:col-span-5">
+
             {/* Info Cards */}
-            <div className="contact-fade-in bg-white p-8 rounded-3xl border border-slate-200/90 shadow-soft space-y-6">
-              <h3 className="text-2xl font-extrabold text-slate-900">Head Office Contact</h3>
-              
-              <div className="space-y-4 text-sm text-slate-700">
-                <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
+            <div className="contact-fade-in h-full bg-white p-8 md:p-9 rounded-3xl border border-slate-200/90 shadow-soft flex flex-col justify-center">
+              <h3 className="text-2xl font-extrabold text-slate-900 mb-7">Head Office Contact</h3>
+
+              <div className="divide-y divide-slate-100 text-sm text-slate-700">
+                <div className="flex items-start gap-4 pb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5 text-emerald-600" />
                   </div>
-                  <div>
+                  <div className="space-y-1.5 pt-1">
                     <div className="font-bold text-slate-900">Head Office Address</div>
-                    <div className="text-slate-600">Morazha Kalliasseri Service Co-op Bank Ltd. No. 4220</div>
-                    <div className="text-slate-500 text-xs mt-0.5">Anchampeedika P.O., Morazha, Kannur - 670301</div>
+                    <div className="text-slate-600 leading-relaxed">Morazha Kalliasseri Service Co-op Bank Ltd. No. 4220</div>
+                    <div className="text-slate-500 text-xs">Anchampeedika P.O., Morazha, Kannur - 670301</div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-slate-100 text-slate-900 flex items-center justify-center shrink-0">
+                <div className="flex items-start gap-4 py-6">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-100 text-slate-900 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5 text-slate-700" />
                   </div>
-                  <div>
+                  <div className="space-y-1.5 pt-1">
                     <div className="font-bold text-slate-900">Secretary & Phone Direct</div>
-                    <div className="text-slate-600">+91 497 2780220 / +91 497 2780520</div>
-                    <div className="text-slate-500 text-xs mt-0.5">Secretary Direct: +91 94474 81220</div>
+                    <div className="text-slate-600 leading-relaxed">
+                      <a href="tel:+914972780220" className="hover:text-emerald-700 hover:underline transition-colors">+91 497 2780220</a>
+                      {" / "}
+                      <a href="tel:+914972780520" className="hover:text-emerald-700 hover:underline transition-colors">+91 497 2780520</a>
+                    </div>
+                    <div className="text-slate-500 text-xs">
+                      Secretary Direct: <a href="tel:+919447481220" className="hover:text-emerald-700 hover:underline transition-colors">+91 94474 81220</a>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-slate-100 text-slate-900 flex items-center justify-center shrink-0">
+                <div className="flex items-start gap-4 pt-6">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-100 text-slate-900 flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5 text-slate-700" />
                   </div>
-                  <div>
+                  <div className="space-y-1.5 pt-1">
                     <div className="font-bold text-slate-900">Official Email</div>
-                    <div className="text-slate-600 font-medium">mkscbank4220@gmail.com</div>
-                    <div className="text-slate-500 text-xs mt-0.5">General correspondence & audit inquiries</div>
+                    <div className="leading-relaxed">
+                      <a href="mailto:mkscbankltd@gmail.com" className="text-slate-600 font-medium hover:text-emerald-700 hover:underline transition-colors">mkscbankltd@gmail.com</a>
+                    </div>
+                    <div className="text-slate-500 text-xs">General correspondence & audit inquiries</div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Google Map Embedded Frame */}
-            <div className="contact-fade-in rounded-3xl overflow-hidden border border-slate-200/90 shadow-soft h-64 relative bg-slate-100">
-              <iframe
-                title="MKSC Bank Map Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15610.123456789!2d75.367890123!3d11.987654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba43e1234567890%3A0x1234567890abcdef!2sAnchampeedika%2C%20Kerala!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-                className="w-full h-full border-0 filter opacity-90 hover:opacity-100 transition-opacity"
-                loading="lazy"
-              />
             </div>
 
           </div>
@@ -277,6 +275,16 @@ export function Contact() {
 
           </div>
 
+        </div>
+
+        {/* Google Map - full width of the container */}
+        <div className="contact-fade-in mt-10 lg:mt-12 relative w-full h-80 md:h-[26rem] rounded-3xl overflow-hidden border border-slate-200/90 shadow-soft bg-slate-100">
+          <iframe
+            title="MKSC Bank Map Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15610.123456789!2d75.367890123!3d11.987654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba43e1234567890%3A0x1234567890abcdef!2sAnchampeedika%2C%20Kerala!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+            className="w-full h-full border-0 filter opacity-90 hover:opacity-100 transition-opacity"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>

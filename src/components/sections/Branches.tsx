@@ -323,7 +323,7 @@ export function Branches() {
             <span>Regional Presence</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Our 9 Branch Network Across Kannur
+            Our 12 Branch Network Across Kannur
           </h2>
           <p className="text-slate-600 text-base md:text-lg leading-relaxed">
             Conveniently located across Morazha, Kalliasseri, and Anthoor municipalities to bring personalized banking directly to your neighborhood.
