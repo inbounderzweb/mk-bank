@@ -86,7 +86,7 @@ export function About() {
             <span>Our Legacy & Heritage</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Six Decades of Dedicated Community Service
+            Seven Decades of Dedicated Community Service
           </h2>
           <p className="text-slate-600 text-base md:text-lg leading-relaxed">
             From modest beginnings in 1951 to a Class 1 Super Grade cooperative bank today, Morazha Kalliasseri Service Co-op Bank remains committed to financial empowerment across Kannur district.

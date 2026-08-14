@@ -112,7 +112,7 @@ export function Contact() {
                   </div>
                   <div className="space-y-1.5 pt-1">
                     <div className="font-bold text-slate-900">Head Office Address</div>
-                    <div className="text-slate-600 leading-relaxed">Morazha Kalliasseri Service Co-op Bank Ltd. No. 4220</div>
+                    <div className="text-slate-600 leading-relaxed">Morazha Kalliasseri Service Co-op Bank Ltd. No. 1452</div>
                     <div className="text-slate-500 text-xs">Anchampeedika P.O., Morazha, Kannur - 670301</div>
                   </div>
                 </div>
@@ -124,12 +124,12 @@ export function Contact() {
                   <div className="space-y-1.5 pt-1">
                     <div className="font-bold text-slate-900">Secretary & Phone Direct</div>
                     <div className="text-slate-600 leading-relaxed">
-                      <a href="tel:+914972780220" className="hover:text-emerald-700 hover:underline transition-colors">+91 497 2780220</a>
-                      {" / "}
-                      <a href="tel:+914972780520" className="hover:text-emerald-700 hover:underline transition-colors">+91 497 2780520</a>
+                      <a href="tel:04972780062" className="hover:text-emerald-700 hover:underline transition-colors">0497 2780062</a>
+                      {/* {" / "} */}
+                      {/* <a href="tel:+914972780520" className="hover:text-emerald-700 hover:underline transition-colors">+91 497 2780520</a> */}
                     </div>
                     <div className="text-slate-500 text-xs">
-                      Secretary Direct: <a href="tel:+919447481220" className="hover:text-emerald-700 hover:underline transition-colors">+91 94474 81220</a>
+                      Secretary Direct: <a href="tel:04972781269" className="hover:text-emerald-700 hover:underline transition-colors">0497 2781269</a>
                     </div>
                   </div>
                 </div>

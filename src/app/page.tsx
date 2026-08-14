@@ -11,6 +11,7 @@ import { Gallery } from "@/components/sections/Gallery";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
+import { InterestRates } from "@/components/sections/InterestRates";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
           <About />
           <MarqueeSection />
           <Services />
+          <InterestRates/>
           {/* <FinancialCalculator /> */}
           <Branches />
           <ConventionCentre />

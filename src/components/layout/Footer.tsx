@@ -131,7 +131,7 @@ export function Footer() {
               Anchampeedika P.O., Morazha, Kannur District, Kerala - 670301
             </p>
             <div className="text-sm text-[#2DBA4E] font-medium">
-              Phone: <a href="tel:+914972780220" className="hover:underline">+91 497 2780220</a>
+              Phone: <a href="tel:04972780062" className="hover:underline">0497 2780062</a>
             </div>
 
             {/* Social Icon */}

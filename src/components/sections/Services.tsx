@@ -28,6 +28,7 @@ import {
   CheckCircle,
   FileText,
   Sparkles,
+  Sun,
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -146,6 +147,12 @@ export function Services() {
       badge: "Farmer Subsidy",
       desc: "Seasonal crop loans, fertilizer financing, and farm equipment modernization credit.",
     },
+    {
+      title: "Soorya Jyothi Solar Loan",
+      icon: Sun,
+      badge: "Solar Finance",
+      desc: "Affordable financing for solar installations, helping you save on energy costs and switch to clean energy.",
+    },
   ];
 
   const bankingServices = [
@@ -155,12 +162,12 @@ export function Services() {
       badge: "Instant Fund Transfer",
       desc: "Nationwide electronic money transfer to any bank account across India with minimal charges.",
     },
-    {
-      title: "Virtual Account System",
-      icon: CreditCard,
-      badge: "Digital Collection",
-      desc: "Automated direct credit collection mechanism for institutions and commercial clients.",
-    },
+    // {
+    //   title: "Virtual Account System",
+    //   icon: CreditCard,
+    //   badge: "Digital Collection",
+    //   desc: "Automated direct credit collection mechanism for institutions and commercial clients.",
+    // },
     {
       title: "On-Site ATM Network",
       icon: CreditCard,
@@ -173,12 +180,12 @@ export function Services() {
       badge: "Vault Security",
       desc: "Dual-key security lockers in reinforced bank vaults for gold, documents, and valuables.",
     },
-    {
-      title: "Demand Draft (DD)",
-      icon: FileCheck,
-      badge: "Guaranteed Payment",
-      desc: "Official bank demand drafts for educational institutions, government fees, and tenders.",
-    },
+    // {
+    //   title: "Demand Draft (DD)",
+    //   icon: FileCheck,
+    //   badge: "Guaranteed Payment",
+    //   desc: "Official bank demand drafts for educational institutions, government fees, and tenders.",
+    // },
   ];
 
   const nonBankingServices = [
@@ -188,12 +195,12 @@ export function Services() {
       badge: "Commercial Hub",
       desc: "Modern multi-storey shopping facility managed by the bank, hosting local retail businesses.",
     },
-    {
-      title: "Neethi Medical Store",
-      icon: Pill,
-      badge: "Subsidized Meds",
-      desc: "Discounted essential medicines and healthcare supplies provided directly to the community.",
-    },
+    // {
+    //   title: "Neethi Medical Store",
+    //   icon: Pill,
+    //   badge: "Subsidized Meds",
+    //   desc: "Discounted essential medicines and healthcare supplies provided directly to the community.",
+    // },
     {
       title: "Consumer Co-op Store",
       icon: Store,
