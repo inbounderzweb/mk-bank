@@ -10,6 +10,7 @@ import { ConventionCentre } from "@/components/sections/ConventionCentre";
 import { Gallery } from "@/components/sections/Gallery";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
           <Contact />
         </main>
         <Footer />
+        <WhatsAppFloat />
       </div>
     </SmoothScrollProvider>
   );
