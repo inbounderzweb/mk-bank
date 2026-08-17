@@ -11,9 +11,9 @@ import { ArrowRight, Building2, CheckCircle2 } from "lucide-react";
 gsap.registerPlugin(ScrollTrigger);
 
 const heroSlides = [
-  { id: 1, image: "/banner_1.png" },
-  { id: 2, image: "/banner_2.png" },
-  { id: 3, image: "/banner_3.png" },
+  { id: 1, image: "/banner_5.jpg", mobileImage: "/banner_5_mobile.png" },
+  // { id: 2, image: "/banner_2.png", mobileImage: "/banner_2_mobile.png" },
+  // { id: 3, image: "/banner_3.png", mobileImage: "/banner_3_mobile.png" },
 ];
 
 export function Hero() {
@@ -94,11 +94,18 @@ export function Hero() {
             }`}
           >
             <Image
+              src={slide.mobileImage}
+              alt="Morazha Kalliasseri Service Co-op Bank"
+              fill
+              priority={idx === 0}
+              className="object-cover object-center md:hidden"
+            />
+            <Image
               src={slide.image}
               alt="Morazha Kalliasseri Service Co-op Bank"
               fill
               priority={idx === 0}
-              className="object-cover object-center"
+              className="hidden md:block object-cover object-center"
             />
           </div>
         ))}
