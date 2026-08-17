@@ -12,8 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const heroSlides = [
   { id: 1, image: "/banner_5.jpg", mobileImage: "/banner_5_mobile.png" },
-  // { id: 2, image: "/banner_2.png", mobileImage: "/banner_2_mobile.png" },
-  // { id: 3, image: "/banner_3.png", mobileImage: "/banner_3_mobile.png" },
+  { id: 2, image: "/banner_6.jpg", mobileImage: "/banner_6_mobile.png" },
+  { id: 3, image: "/banner_7.jpg", mobileImage: "/banner_7_mobile.png" },
 ];
 
 export function Hero() {
