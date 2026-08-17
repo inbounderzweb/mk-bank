@@ -21,78 +21,112 @@ import {
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const branchList = [
+  // {
+  //   name: "Head Office",
+  //   type: "Head Office",
+  //   isHeadOffice: true,
+  //   address: null,
+  //   phone: "+91 94470 33669",
+  //   hours: "Mon - Fri: 10:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM",
+  //   status: "Open Now",
+  // },
   {
-    name: "Anchampeedika Main Branch",
-    type: "Head Office & Main Branch",
-    isHeadOffice: true,
-    address: "Anchampeedika P.O., Morazha via, Kannur District - 670301",
-    phone: "+91 497 2780220 / 2780520",
-    hours: "Mon - Sat: 9:00 AM - 4:00 PM",
-    status: "Open Now",
-  },
-  {
-    name: "Mangattuparamba Branch",
+    name: "Anchampeedika Branch",
     type: "Full-Service Branch",
-    address: "Near Kannur University Campus, Mangattuparamba, Kannur - 670567",
-    phone: "+91 497 2782100",
-    hours: "Mon - Sat: 9:30 AM - 4:30 PM",
+    address: "Anchampeedika P.O., Morazha via, Kannur District - 670301",
+    phone: "+91 94470 30569",
+    hours: "Mon - Sat: 8:00 AM - 7:30 PM",
     status: "Open Now",
   },
   {
     name: "Mangad Branch",
-    type: "Commercial Hub Branch",
+    type: "Full-Service Branch",
     address: "Near Shopping Complex, Mangad P.O., Kannur - 670562",
-    phone: "+91 497 2781440",
-    hours: "Mon - Sat: 9:30 AM - 4:30 PM",
+    phone: "+91 94470 31969",
+    hours: "Mon - Fri: 9:00 AM - 4:00 PM, Sat: 9:00 AM - 1:00 PM",
     status: "Open Now",
   },
   {
     name: "Vellikkeel Branch",
     type: "Full-Service Branch",
     address: "Vellikkeel Junction, Morazha, Kannur - 670301",
-    phone: "+91 497 2783050",
-    hours: "Mon - Sat: 9:30 AM - 4:30 PM",
+    phone: "+91 94470 32769",
+    hours: "Mon - Fri: 10:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM",
     status: "Open Now",
   },
   {
     name: "Kolathuvayal Branch",
-    type: "Agricultural & Rural Branch",
+    type: "Full-Service Branch",
     address: "Kolathuvayal Center, Morazha, Kannur - 670301",
-    phone: "+91 497 2784110",
-    hours: "Mon - Sat: 9:30 AM - 4:30 PM",
+    phone: "+91 94470 32869",
+    hours: "Mon - Fri: 10:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM",
     status: "Open Now",
   },
   {
     name: "Parassinikkadavu Branch",
-    type: "Temple & Tourism Town Branch",
+    type: "Full-Service Branch",
     address: "Parassinikkadavu P.O., Near Snake Park Road, Kannur - 670563",
-    phone: "+91 497 2780890",
-    hours: "Mon - Sat: 9:00 AM - 4:30 PM",
+    phone: "+91 94470 32969",
+    hours: "Mon - Fri: 10:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM",
+    status: "Open Now",
+  },
+  {
+    name: "Mangattuparamba Branch",
+    type: "Full-Service Branch",
+    address: "Near Kannur University Campus, Mangattuparamba, Kannur - 670567",
+    phone: "+91 94470 34369",
+    hours: "Mon - Fri: 10:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM",
     status: "Open Now",
   },
   {
     name: "Dharmasala Evening Branch",
-    type: "Extended Hours Branch",
+    type: "Evening Branch",
     isEvening: true,
     address: "Dharmasala Junction, Anthoor Municipality, Kannur - 670567",
-    phone: "+91 497 2785220",
-    hours: "Mon - Sat: 10:00 AM - 6:30 PM (Evening)",
+    phone: "+91 94470 36069",
+    hours: "Mon - Sat: 2:00 PM - 8:00 PM",
     status: "Open Now",
   },
   {
-    name: "Paliyathvavalappu Branch",
+    name: "Paliyathuvalappu Branch",
     type: "Full-Service Branch",
     address: "Paliyathvavalappu, Kalliasseri Panchayat, Kannur - 670562",
-    phone: "+91 497 2786330",
-    hours: "Mon - Sat: 9:30 AM - 4:30 PM",
+    phone: "+91 94470 37369",
+    hours: "Mon - Fri: 10:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM",
     status: "Open Now",
   },
   {
     name: "Ayyankol Branch",
-    type: "Community Branch",
+    type: "Full-Service Branch",
     address: "Ayyankol Center, Morazha, Kannur - 670301",
-    phone: "+91 497 2787440",
-    hours: "Mon - Sat: 9:30 AM - 4:30 PM",
+    phone: "+91 94470 37469",
+    hours: "Mon - Fri: 10:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM",
+    status: "Open Now",
+  },
+  {
+    name: "Yogashala Branch",
+    type: "Full-Service Branch",
+    address: null,
+    phone: "+91 94470 37569",
+    hours: "Mon - Fri: 10:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM",
+    status: "Open Now",
+  },
+  {
+    name: "Keecheri Evening Branch",
+    type: "Evening Branch",
+    isEvening: true,
+    address: null,
+    phone: "+91 94000 22469",
+    hours: "Mon - Sat: 2:00 PM - 8:00 PM",
+    status: "Open Now",
+  },
+  {
+    name: "Mangad Evening Branch",
+    type: "Evening Branch",
+    isEvening: true,
+    address: null,
+    phone: "+91 94470 33269",
+    hours: "Mon - Sat: 2:00 PM - 8:00 PM",
     status: "Open Now",
   },
 ];
@@ -389,7 +423,11 @@ export function Branches() {
                   <div className="space-y-3 text-sm text-slate-600">
                     <div className="flex items-start gap-3">
                       <MapPin className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
-                      <span>{branch.address}</span>
+                      {branch.address ? (
+                        <span>{branch.address}</span>
+                      ) : (
+                        <span className="italic text-slate-400">Address details coming soon</span>
+                      )}
                     </div>
                     <div className="flex items-center gap-3">
                       <Phone className="w-4 h-4 text-slate-600 shrink-0" />
@@ -409,7 +447,7 @@ export function Branches() {
                   <div className="pt-6 mt-6 border-t border-slate-200/80 flex items-center justify-between">
                     <span className="text-[11px] font-mono text-slate-500">IFSC / Core Banking Ready</span>
                     <a
-                      href={`https://maps.google.com/?q=${encodeURIComponent(branch.name + " " + branch.address)}`}
+                      href={`https://maps.google.com/?q=${encodeURIComponent(branch.address ? `${branch.name} ${branch.address}` : `${branch.name} Morazha Kalliasseri Service Co-operative Bank`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-slate-900 hover:bg-emerald-700 transition-colors px-3.5 py-2 rounded-full"

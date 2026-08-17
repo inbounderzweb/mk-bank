@@ -16,7 +16,7 @@ export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    branch: "Anchampeedika Main Branch",
+    branch: "Head Office",
     service: "Savings Deposit / General Inquiry",
     message: "",
   });
@@ -65,7 +65,7 @@ export function Contact() {
         setFormData({
           name: "",
           phone: "",
-          branch: "Anchampeedika Main Branch",
+          branch: "Head Office",
           service: "Savings Deposit / General Inquiry",
           message: "",
         });
@@ -208,15 +208,19 @@ export function Contact() {
                       onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
                       className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10 transition-all outline-none text-sm text-slate-900 font-medium"
                     >
-                      <option>Anchampeedika Main Branch</option>
-                      <option>Mangattuparamba Branch</option>
+                      <option>Head Office</option>
+                      <option>Anchampeedika Branch</option>
                       <option>Mangad Branch</option>
                       <option>Vellikkeel Branch</option>
                       <option>Kolathuvayal Branch</option>
                       <option>Parassinikkadavu Branch</option>
+                      <option>Mangattuparamba Branch</option>
                       <option>Dharmasala Evening Branch</option>
-                      <option>Paliyathvavalappu Branch</option>
+                      <option>Paliyathuvalappu Branch</option>
                       <option>Ayyankol Branch</option>
+                      <option>Yogashala Branch</option>
+                      <option>Keecheri Evening Branch</option>
+                      <option>Mangad Evening Branch</option>
                     </select>
                   </div>
 

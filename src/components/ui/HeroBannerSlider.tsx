@@ -30,7 +30,7 @@ const bannerSlides = [
     title: "Modern Commercial & Community Hubs",
     subtitle: "9 branches, Mangad Shopping Complex, Neethi subsidized pharmacies, and 24/7 ambulance.",
     image: "/banner_3.png",
-    badge: "9 Branches",
+    badge: "13 Branches",
     tagColor: "bg-slate-900",
     icon: Building2,
   },

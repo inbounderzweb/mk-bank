@@ -68,7 +68,7 @@ export function About() {
     {
       year: "Present Day",
       title: "Class 1 Super Grade Bank",
-      desc: "Elevated to Class 1 Super Grade status with 9 modern branches, RTGS/NEFT, ATMs, and extensive community welfare units.",
+      desc: "Elevated to Class 1 Super Grade status with 13 modern branches, RTGS/NEFT, ATMs, and extensive community welfare units.",
     },
   ];
 

@@ -108,6 +108,12 @@ export function Services() {
       badge: "For Business",
       desc: "Unrestricted daily transactions, cheque book facility, and statement services for traders.",
     },
+     {
+      title: "Safe Deposit Lockers",
+      icon: Lock,
+      badge: "Vault Security",
+      desc: "Dual-key security lockers in reinforced bank vaults for gold, documents, and valuables.",
+    },
   ];
 
   const loanServices = [
@@ -173,12 +179,6 @@ export function Services() {
       icon: CreditCard,
       badge: "24/7 Cash Access",
       desc: "24-hour ATM facilities at main branch locations for instant cash withdrawals.",
-    },
-    {
-      title: "Safe Deposit Lockers",
-      icon: Lock,
-      badge: "Vault Security",
-      desc: "Dual-key security lockers in reinforced bank vaults for gold, documents, and valuables.",
     },
     // {
     //   title: "Demand Draft (DD)",
