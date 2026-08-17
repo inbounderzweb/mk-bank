@@ -20,7 +20,18 @@ import {
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const branchList = [
+type BranchItem = {
+  name: string;
+  type: string;
+  address: string | null;
+  phone: string;
+  hours: string;
+  status: string;
+  isHeadOffice?: boolean;
+  isEvening?: boolean;
+};
+
+const branchList: BranchItem[] = [
   // {
   //   name: "Head Office",
   //   type: "Head Office",
