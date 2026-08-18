@@ -16,7 +16,7 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 // TODO: swap in the live Convention Centre URL once available
-const CONVENTION_CENTRE_URL = "https://astoriaconventioncentre.vercel.app/";
+const CONVENTION_CENTRE_URL = "https://www.astoriaconventioncentre.com/";
 
 const featuredImage = { icon: PartyPopper, label: "Grand Auditorium", image: "/cn.jpg" };
 

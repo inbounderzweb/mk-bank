@@ -29,11 +29,23 @@ import {
   FileText,
   Sparkles,
   Sun,
+  Smartphone,
+  ExternalLink,
+  type LucideIcon,
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 type ServiceCategory = "deposits" | "loans" | "banking" | "non-banking";
+
+interface ServiceItem {
+  title: string;
+  icon: LucideIcon;
+  badge: string;
+  desc: string;
+  link?: string;
+  linkLabel?: string;
+}
 
 interface DownloadForm {
   title: string;
@@ -83,7 +95,7 @@ export function Services() {
     return () => ctx.revert();
   }, [activeTab]);
 
-  const depositServices = [
+  const depositServices: ServiceItem[] = [
     {
       title: "Savings Bank (SB) Deposit",
       icon: PiggyBank,
@@ -116,7 +128,7 @@ export function Services() {
     },
   ];
 
-  const loanServices = [
+  const loanServices: ServiceItem[] = [
     {
       title: "Personal Security Loans",
       icon: CheckCircle,
@@ -161,12 +173,20 @@ export function Services() {
     },
   ];
 
-  const bankingServices = [
+  const bankingServices: ServiceItem[] = [
     {
       title: "RTGS / NEFT Money Transfer",
       icon: Send,
       badge: "Instant Fund Transfer",
       desc: "Nationwide electronic money transfer to any bank account across India with minimal charges.",
+    },
+    {
+      title: "Mobile Banking – MambaPlus",
+      icon: Smartphone,
+      badge: "Bank From Home",
+      desc: "For all banking needs from home — check balances, transfer funds, and manage your account on the go.",
+      link: "https://play.google.com/store/apps/details?id=mambaplus.com.mambaplus",
+      linkLabel: "Get MambaPlus App",
     },
     // {
     //   title: "Virtual Account System",
@@ -188,7 +208,7 @@ export function Services() {
     // },
   ];
 
-  const nonBankingServices = [
+  const nonBankingServices: ServiceItem[] = [
     {
       title: "Mangad Shopping Complex",
       icon: ShoppingBag,
@@ -202,7 +222,7 @@ export function Services() {
     //   desc: "Discounted essential medicines and healthcare supplies provided directly to the community.",
     // },
     {
-      title: "Consumer Co-op Store",
+      title: "Mangoes Co-op Super Market",
       icon: Store,
       badge: "Fair Price Grocery",
       desc: "Quality household provisions and groceries sold at controlled prices to curb inflation.",
@@ -310,12 +330,17 @@ export function Services() {
                     <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
                   </div>
 
-                  {/* <div className="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between text-xs font-semibold text-slate-500">
-                    <span>MKSC Bank Verified</span>
-                    <span className="text-slate-900 font-bold group-hover:translate-x-1 transition-transform">
-                      Learn More →
-                    </span>
-                  </div> */}
+                  {item.link && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-2xl bg-slate-900 hover:bg-emerald-700 text-white font-bold text-sm transition-colors"
+                    >
+                      <span>{item.linkLabel || "Open Link"}</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
                 </TiltCard>
               </div>
             );

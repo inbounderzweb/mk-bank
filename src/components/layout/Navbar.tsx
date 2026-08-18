@@ -62,7 +62,7 @@ export function Navbar() {
                   scrolled ? "text-slate-900" : "text-white drop-shadow-md"
                 }`}
               >
-                Morazhakalliasseri Bank
+                Morazha Kalliasseri Bank
               </span>
             </div>
           </div>

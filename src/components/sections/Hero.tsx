@@ -187,7 +187,7 @@ export function Hero() {
           </div>
           <div className="hero-stats min-w-0">
             <StatsCounter
-              value={60}
+              value={75}
               suffix="+ Years"
               label="Community Trust"
               sublabel="Class 1 Super Grade Bank"

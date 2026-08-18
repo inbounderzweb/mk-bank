@@ -2,8 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import {
   Building2,
   MapPin,
@@ -17,8 +15,6 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 type BranchItem = {
   name: string;
@@ -117,7 +113,7 @@ const branchList: BranchItem[] = [
   {
     name: "Yogashala Branch",
     type: "Full-Service Branch",
-    address: null,
+    address: "Cherukunnu P.O., Kannur - 670301",
     phone: "+91 94470 37569",
     hours: "Mon - Fri: 10:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM",
     status: "Open Now",
@@ -126,7 +122,7 @@ const branchList: BranchItem[] = [
     name: "Keecheri Evening Branch",
     type: "Evening Branch",
     isEvening: true,
-    address: null,
+    address: "Anchampeedika P.O., Kannur - 670331",
     phone: "+91 94000 22469",
     hours: "Mon - Sat: 2:00 PM - 8:00 PM",
     status: "Open Now",
@@ -135,7 +131,7 @@ const branchList: BranchItem[] = [
     name: "Mangad Evening Branch",
     type: "Evening Branch",
     isEvening: true,
-    address: null,
+    address: "Kalliasseri P.O., Kannur - 670562",
     phone: "+91 94470 33269",
     hours: "Mon - Sat: 2:00 PM - 8:00 PM",
     status: "Open Now",
@@ -184,170 +180,54 @@ export function Branches() {
   useEffect(() => {
     if (!sectionRef.current || !trackRef.current) return;
 
-    const mm = gsap.matchMedia();
+    const track = trackRef.current;
+    const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
+    if (!cards.length) return;
 
-    mm.add(
-      {
-        isDesktop: "(min-width: 768px)",
-        isMobile: "(max-width: 767px)",
-        reduceMotion: "(prefers-reduced-motion: reduce)",
-      },
-      (context) => {
-        const { isDesktop, isMobile, reduceMotion } = context.conditions as {
-          isDesktop: boolean;
-          isMobile: boolean;
-          reduceMotion: boolean;
-        };
+    gsap.set(track, { x: 0 });
 
-        const track = trackRef.current!;
-        const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
-        if (!cards.length) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      gsap.set(cards, { scale: 1 });
+      return;
+    }
 
-        gsap.set(track, { x: 0 });
+    // Same auto-advancing carousel on every screen size — no scroll-linked animation
+    let current = 0;
+    let timer: ReturnType<typeof setInterval> | undefined;
 
-        if (!reduceMotion) {
-          // Entrance reveal for the whole rail
-          gsap.from(track, {
-            opacity: 0,
-            y: 30,
-            duration: 0.9,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 80%",
-            },
-          });
-        }
+    const getStep = () => {
+      const first = cards[0];
+      const styles = getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+      // offsetWidth (not getBoundingClientRect) so cards[0] being scaled
+      // down once inactive can't shrink the measured step distance.
+      return first.offsetWidth + gap;
+    };
 
-        if (reduceMotion) {
-          gsap.set(cards, { scale: 1 });
-          return;
-        }
+    const stopAutoplay = () => {
+      if (timer) clearInterval(timer);
+    };
 
-        // Desktop: pin the section and drive the rail from scroll position
-        if (isDesktop) {
-          const getDistance = () => {
-            const first = cards[0];
-            const styles = getComputedStyle(track);
-            const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
-            // offsetWidth (not getBoundingClientRect) so an active-card scale
-            // transform on cards[0] can't shrink this measurement.
-            const cardWidth = first.offsetWidth;
-            return (cards.length - 1) * (cardWidth + gap);
-          };
+    const goTo = (index: number) => {
+      current = (index + cards.length) % cards.length;
+      gsap.to(track, { x: -current * getStep(), duration: 0.8, ease: "power2.inOut" });
+      cards.forEach((card, i) => {
+        gsap.to(card, { scale: i === current ? 1 : 0.92, duration: 0.5, ease: "power2.out" });
+      });
+      setActiveIndex(current);
 
-          const updateActiveVisuals = () => {
-            const viewportCenter = window.innerWidth / 2;
-            let closestIndex = 0;
-            let closestDist = Infinity;
+      stopAutoplay();
+      timer = setInterval(() => goTo(current + 1), 4000);
+    };
 
-            cards.forEach((card, i) => {
-              const rect = card.getBoundingClientRect();
-              const cardCenter = rect.left + rect.width / 2;
-              const dist = Math.abs(cardCenter - viewportCenter);
-              const norm = gsap.utils.clamp(0, 1, dist / (rect.width * 0.62));
-              const scale = gsap.utils.interpolate(1, 0.9, norm);
-              gsap.set(card, { scale });
+    navigateRef.current = goTo;
+    cards.forEach((card, i) => gsap.set(card, { scale: i === 0 ? 1 : 0.92 }));
+    timer = setInterval(() => goTo(current + 1), 4000);
 
-              const visual = visualsRef.current[i];
-              if (visual) {
-                const offset = gsap.utils.clamp(-14, 14, ((cardCenter - viewportCenter) / rect.width) * 14);
-                gsap.set(visual, { xPercent: offset });
-              }
-
-              if (dist < closestDist) {
-                closestDist = dist;
-                closestIndex = i;
-              }
-            });
-
-            setActiveIndex((prev) => (prev === closestIndex ? prev : closestIndex));
-          };
-
-          const horizontalTween = gsap.to(track, {
-            x: () => -getDistance(),
-            ease: "none",
-            scrollTrigger: {
-              id: "branches-horizontal",
-              trigger: sectionRef.current,
-              start: "top top",
-              end: () => "+=" + getDistance(),
-              scrub: 1,
-              pin: true,
-              anticipatePin: 1,
-              invalidateOnRefresh: true,
-              snap: {
-                snapTo: 1 / (cards.length - 1),
-                duration: { min: 0.2, max: 0.6 },
-                ease: "power2.inOut",
-              },
-              onUpdate: updateActiveVisuals,
-              onRefresh: updateActiveVisuals,
-            },
-          });
-
-          navigateRef.current = (index: number) => {
-            const st = ScrollTrigger.getById("branches-horizontal");
-            if (!st) return;
-            const progress = index / (cards.length - 1);
-            const target = st.start + progress * (st.end - st.start);
-            gsap.to(window, {
-              duration: 1,
-              scrollTo: { y: target },
-              ease: "power2.inOut",
-            });
-          };
-
-          updateActiveVisuals();
-
-          return () => {
-            horizontalTween.kill();
-          };
-        }
-
-        // Mobile: no scroll-linked animation — auto-advance like a carousel
-        if (isMobile) {
-          let current = 0;
-          let timer: ReturnType<typeof setInterval> | undefined;
-
-          const getStep = () => {
-            const first = cards[0];
-            const styles = getComputedStyle(track);
-            const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
-            // offsetWidth (not getBoundingClientRect) so cards[0] being scaled
-            // down once inactive can't shrink the measured step distance.
-            return first.offsetWidth + gap;
-          };
-
-          const stopAutoplay = () => {
-            if (timer) clearInterval(timer);
-          };
-
-          const goTo = (index: number) => {
-            current = (index + cards.length) % cards.length;
-            gsap.to(track, { x: -current * getStep(), duration: 0.8, ease: "power2.inOut" });
-            cards.forEach((card, i) => {
-              gsap.to(card, { scale: i === current ? 1 : 0.92, duration: 0.5, ease: "power2.out" });
-            });
-            setActiveIndex(current);
-
-            stopAutoplay();
-            timer = setInterval(() => goTo(current + 1), 4000);
-          };
-
-          navigateRef.current = goTo;
-          cards.forEach((card, i) => gsap.set(card, { scale: i === 0 ? 1 : 0.92 }));
-          setActiveIndex(0);
-          timer = setInterval(() => goTo(current + 1), 4000);
-
-          return () => {
-            stopAutoplay();
-          };
-        }
-      }
-    );
-
-    return () => mm.revert();
+    return () => {
+      stopAutoplay();
+    };
   }, []);
 
   const goToBranch = (index: number) => {
@@ -368,7 +248,7 @@ export function Branches() {
             <span>Regional Presence</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Our 12 Branch Network Across Kannur
+            Our 12 Branch Network
           </h2>
           <p className="text-slate-600 text-base md:text-lg leading-relaxed">
             Conveniently located across Morazha, Kalliasseri, and Anthoor municipalities to bring personalized banking directly to your neighborhood.
