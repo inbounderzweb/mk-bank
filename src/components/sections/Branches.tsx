@@ -40,7 +40,7 @@ const branchList: BranchItem[] = [
   {
     name: "Anchampeedika Branch",
     type: "Full-Service Branch",
-    address: "Anchampeedika P.O., Morazha via, Kannur District - 670301",
+    address: "Anchampeedika P.O., Morazha via, Kannur District - 670331",
     phone: "+91 94470 30569",
     hours: "Mon - Sat: 8:00 AM - 7:30 PM",
     status: "Open Now",

@@ -127,7 +127,7 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-sm font-bold uppercase tracking-wider text-slate-200">Head Office</h4>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Anchampeedika P.O., Morazha, Kannur District, Kerala - 670301
+              Anchampeedika P.O., Morazha, Kannur District, Kerala - 670331
             </p>
             <div className="text-sm text-[#2DBA4E] font-medium">
               Phone: <a href="tel:04972780062" className="hover:underline">0497 2780062</a>

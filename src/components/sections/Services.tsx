@@ -33,6 +33,7 @@ import {
   Smartphone,
   ExternalLink,
   Eye,
+  Phone,
   type LucideIcon,
 } from "lucide-react";
 
@@ -48,6 +49,7 @@ interface ServiceItem {
   link?: string;
   linkLabel?: string;
   viewImage?: string;
+  phones?: string[];
 }
 
 interface DownloadForm {
@@ -223,8 +225,9 @@ export function Services() {
       title: "Mini Auditorium",
       icon: Sparkles,
       badge: "Event Space",
-      desc: "Premium mini auditorium for weddings, birthdays, meetings, conferences, and private events.",
+      desc: "Premium mini auditorium for weddings, birthdays, meetings, conferences, and private events. ",
       viewImage: "/minihall.png",
+      phones: ["+91 9495335569", "+91 9446677872"],
     },
     {
       title: "Mangad Shopping Complex",
@@ -345,6 +348,21 @@ export function Services() {
                       {item.title}
                     </h3>
                     <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+
+                    {item.phones && item.phones.length > 0 && (
+                      <div className="flex flex-col gap-1.5 pt-1">
+                        {item.phones.map((num) => (
+                          <a
+                            key={num}
+                            href={`tel:${num.replace(/[^0-9+]/g, "")}`}
+                            className="inline-flex items-center gap-2 text-sm font-bold text-slate-800 hover:text-emerald-700 transition-colors"
+                          >
+                            <Phone className="w-4 h-4 text-emerald-600 shrink-0" />
+                            <span>{num}</span>
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {item.link && (
