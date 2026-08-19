@@ -59,7 +59,7 @@ export function Footer() {
                   Morazha Kalliasseri
                 </h3>
                 <span className="text-xs font-medium text-slate-400">
-                  Service Co-operative Bank Ltd. No. 4220
+                  Service Co-operative Bank Ltd. No. 1452
                 </span>
               </div>
             </div>
@@ -120,7 +120,6 @@ export function Footer() {
               <li>RTGS / NEFT Money Transfers</li>
               <li>Kudumbasree NHG Credit</li>
               <li>Mangad Shopping Complex</li>
-              <li>Neethi Subsidized Pharmacy</li>
             </ul>
           </div>
 
@@ -159,7 +158,7 @@ export function Footer() {
         {/* Bottom Copyright Strip */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © {new Date().getFullYear()} Morazha Kalliasseri Service Co-operative Bank Ltd. No. 4220. All Rights Reserved.
+            © {new Date().getFullYear()} Morazha Kalliasseri Service Co-operative Bank Ltd. No. 1452. All Rights Reserved.
           </div>
 
           <div className="flex items-center gap-6">

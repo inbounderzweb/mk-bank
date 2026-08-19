@@ -57,7 +57,7 @@ export function About() {
     },
     {
       year: "21 Mar 1961",
-      title: "Official Registration (No. 4220)",
+      title: "Official Registration (No. 1452)",
       desc: "Formally registered under Kerala Cooperative Societies Act as Morazha Kalliasseri Service Co-operative Bank Ltd.",
     },
     {
@@ -204,7 +204,7 @@ export function About() {
         category="Foundational Purpose"
       >
         <p className="text-base text-slate-700 leading-relaxed">
-          Morazha Kalliasseri Service Co-operative Bank Ltd. No. 4220 was established with the primary directive of providing affordable financial credit to farmers, small tradesmen, and local families.
+          Morazha Kalliasseri Service Co-operative Bank Ltd. No. 1452 was established with the primary directive of providing affordable financial credit to farmers, small tradesmen, and local families.
         </p>
         <div className="space-y-3 pt-2">
           <h4 className="font-bold text-slate-900 text-sm">Key Objectives:</h4>
@@ -243,7 +243,7 @@ export function About() {
             </li>
             <li className="flex items-start gap-2">
               <ShieldCheck className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
-              <span>Expansion of branch ATM networks and Virtual Account settlement systems.</span>
+              <span>Expansion of branch ATM networks.</span>
             </li>
             <li className="flex items-start gap-2">
               <ShieldCheck className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
@@ -263,12 +263,12 @@ export function About() {
           Our bank adheres strictly to the universally recognized cooperative principles formulated by the International Co-operative Alliance (ICA):
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-700 font-medium">
-          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">1. Open & Voluntary Membership</div>
-          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">2. Democratic Member Governance</div>
+          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">1. Voluntary and Open Membership</div>
+          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">2. Democratic Member Control</div>
           <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">3. Member Economic Participation</div>
-          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">4. Autonomy & Independence</div>
-          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">5. Education & Training</div>
-          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">6. Active Concern for Community</div>
+          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">4. Autonomy and Independence</div>
+          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">5. Education, Training and Information</div>
+          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">6. Concern for Community</div>
         </div>
       </Modal>
     </section>

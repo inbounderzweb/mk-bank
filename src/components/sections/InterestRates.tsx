@@ -27,7 +27,7 @@ interface RateTier {
 const rateTiers: RateTier[] = [
   { tenure: "15 days – 45 days", rate: "6.25%", icon: Timer },
   { tenure: "46 days – 90 days", rate: "6.75%", icon: CalendarDays },
-  { tenure: "91 days – 179 days", rate: "7.00%", icon: CalendarRange },
+  { tenure: "91 days – 179 days", rate: "7.25%", icon: CalendarRange },
   { tenure: "180 days – 364 days", rate: "7.75%", icon: CalendarClock },
   { tenure: "1 year – up to 2 years", rate: "8.00%", icon: Calendar },
   { tenure: "Above 2 years", rate: "8.10%", icon: TrendingUp, highlight: true },

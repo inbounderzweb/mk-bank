@@ -210,6 +210,12 @@ export function Services() {
 
   const nonBankingServices: ServiceItem[] = [
     {
+      title: "Astoria Convention Centre",
+      icon: Landmark,
+      badge: "Event Venue",
+      desc: "Spacious convention hall managed by the bank for weddings, conferences, and community gatherings.",
+    },
+    {
       title: "Mangad Shopping Complex",
       icon: ShoppingBag,
       badge: "Commercial Hub",

@@ -56,7 +56,7 @@ const branchList: BranchItem[] = [
   {
     name: "Vellikkeel Branch",
     type: "Full-Service Branch",
-    address: "Vellikkeel Junction, Morazha, Kannur - 670301",
+    address: "Vellikkeel Junction, Morazha, Kannur - 670331",
     phone: "+91 94470 32769",
     hours: "Mon - Fri: 10:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM",
     status: "Open Now",
@@ -64,7 +64,7 @@ const branchList: BranchItem[] = [
   {
     name: "Kolathuvayal Branch",
     type: "Full-Service Branch",
-    address: "Kolathuvayal Center, Morazha, Kannur - 670301",
+    address: "Ayyankol, Kanul po, kannur 670562",
     phone: "+91 94470 32869",
     hours: "Mon - Fri: 10:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM",
     status: "Open Now",
@@ -97,7 +97,7 @@ const branchList: BranchItem[] = [
   {
     name: "Paliyathuvalappu Branch",
     type: "Full-Service Branch",
-    address: "Paliyathvavalappu, Kalliasseri Panchayat, Kannur - 670562",
+    address: "Paliyathuvalappu, Morazha PO, Kannur 670331",
     phone: "+91 94470 37369",
     hours: "Mon - Fri: 10:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM",
     status: "Open Now",

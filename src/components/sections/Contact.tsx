@@ -113,7 +113,7 @@ export function Contact() {
                   <div className="space-y-1.5 pt-1">
                     <div className="font-bold text-slate-900">Head Office Address</div>
                     <div className="text-slate-600 leading-relaxed">Morazha Kalliasseri Service Co-op Bank Ltd. No. 1452</div>
-                    <div className="text-slate-500 text-xs">Anchampeedika P.O., Morazha, Kannur - 670301</div>
+                    <div className="text-slate-500 text-xs">Anchampeedika P.O., Morazha, Kannur - 670331</div>
                   </div>
                 </div>
 

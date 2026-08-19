@@ -154,7 +154,7 @@ export function Hero() {
           <div className="pt-2 flex flex-wrap items-center gap-6 text-xs md:text-sm text-slate-200 font-semibold">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-[#2DBA4E]" />
-              <span>Govt. Audited &amp; RBI Compliant</span>
+              <span>Govt. Audited</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-[#2DBA4E]" />

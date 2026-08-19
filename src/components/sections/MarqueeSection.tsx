@@ -13,6 +13,7 @@ const marqueeItemsRow1 = [
   { text: "INSTANT RTGS / NEFT MONEY TRANSFER", icon: Send, color: "text-[#2DBA4E]" },
   { text: "75+ YEARS OF COMMUNITY TRUST", icon: ShieldCheck, color: "text-slate-900" },
   { text: "KUDUMBASREE WOMEN GROUP CREDIT", icon: Heart, color: "text-[text-slate-900]" },
+   { text: "MANGOES SUPERMARKET", icon: Send, color: "text-[#2DBA4E]" },
 ];
 
 const marqueeItemsRow2 = [
@@ -23,6 +24,7 @@ const marqueeItemsRow2 = [
   { text: "24/7 EMERGENCY AMBULANCE SERVICE", icon: ShieldCheck, color: "text-[text-slate-900]" },
   { text: "ORGANIC FERTILIZER & SEED DEPOT", icon: Sprout, color: "text-[#2DBA4E]" },
   { text: "SAFE DEPOSIT VAULT LOCKERS", icon: Landmark, color: "text-slate-900" },
+  { text: "ASTORIA CONVENTION CENTRE", icon: Building2, color: "text-[#2DBA4E]" }
 ];
 
 export function MarqueeSection() {
