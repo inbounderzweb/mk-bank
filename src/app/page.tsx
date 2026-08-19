@@ -12,7 +12,6 @@ import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
 import { InterestRates } from "@/components/sections/InterestRates";
-import { MiniHall } from "@/components/sections/MiniHall";
 
 export default function Home() {
   return (
@@ -29,7 +28,6 @@ export default function Home() {
           <Branches />
           <ConventionCentre />
           <Gallery />
-          {/* <MiniHall/> */}
           <Contact />
         </main>
         <Footer />

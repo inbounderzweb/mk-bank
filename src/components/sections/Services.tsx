@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import NextImage from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TiltCard } from "@/components/ui/TiltCard";
@@ -31,6 +32,7 @@ import {
   Sun,
   Smartphone,
   ExternalLink,
+  Eye,
   type LucideIcon,
 } from "lucide-react";
 
@@ -45,6 +47,7 @@ interface ServiceItem {
   desc: string;
   link?: string;
   linkLabel?: string;
+  viewImage?: string;
 }
 
 interface DownloadForm {
@@ -73,6 +76,7 @@ export function Services() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [activeTab, setActiveTab] = useState<ServiceCategory>("deposits");
   const [selectedFormModal, setSelectedFormModal] = useState<string | null>(null);
+  const [imagePreview, setImagePreview] = useState<{ src: string; title: string } | null>(null);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -216,6 +220,13 @@ export function Services() {
       desc: "Spacious convention hall managed by the bank for weddings, conferences, and community gatherings.",
     },
     {
+      title: "Mini Auditorium",
+      icon: Sparkles,
+      badge: "Event Space",
+      desc: "Premium mini auditorium for weddings, birthdays, meetings, conferences, and private events.",
+      viewImage: "/minihall.png",
+    },
+    {
       title: "Mangad Shopping Complex",
       icon: ShoppingBag,
       badge: "Commercial Hub",
@@ -347,6 +358,17 @@ export function Services() {
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   )}
+
+                  {item.viewImage && (
+                    <button
+                      type="button"
+                      onClick={() => setImagePreview({ src: item.viewImage!, title: item.title })}
+                      className="mt-6 inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-2xl bg-slate-900 hover:bg-emerald-700 text-white font-bold text-sm transition-colors"
+                    >
+                      <Eye className="w-4 h-4" />
+                      <span>View Images</span>
+                    </button>
+                  )}
                 </TiltCard>
               </div>
             );
@@ -437,6 +459,26 @@ export function Services() {
           </Modal>
         );
       })()}
+
+      {/* Image Preview Modal */}
+      <Modal
+        isOpen={!!imagePreview}
+        onClose={() => setImagePreview(null)}
+        title={imagePreview?.title || "Image Preview"}
+        category="Photo Gallery"
+      >
+        {imagePreview && (
+          <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-slate-100">
+            <NextImage
+              src={imagePreview.src}
+              alt={imagePreview.title}
+              fill
+              sizes="(max-width: 768px) 90vw, 640px"
+              className="object-cover"
+            />
+          </div>
+        )}
+      </Modal>
     </section>
   );
 }
